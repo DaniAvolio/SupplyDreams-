@@ -2,3 +2,27 @@
   <span class="input-group-text" id="addon-wrapping"><img src="https://cdn-icons-png.flaticon.com/512/54/54481.png" alt="" width="15" height="15"></span>
   <input type="text" class="form-control" placeholder="Cerca Prodotto" aria-label="Username" aria-describedby="addon-wrapping">
 </div>
+<br><br>
+<!-- row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3 -->
+<div class="d-flex flex-wrap justify-content-center py-3 mb-4 row row-cols-1 row-cols-sm-2 row-cols-md-5 g-1  " style="padding: 3vh;" *ngFor="let prod of prodotti">
+
+  <div class=" text-center">
+    <div class="card shadow-sm ">
+      <p><strong>{{prod.marca}}</strong></p>
+      <img class="container" src="{{prod.foto}}" alt="" width="" height="">
+      <br>
+      <div class="card-body bg-secondary">
+        <p class="card-text text-white"><strong>{{prod.nome}}</strong></p>
+        <p class="card-text text-white">{{prod.desc}}</p>
+
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="btn-group">
+            <button [routerLink]="['/prodotti', prod.slug]" type="button" class="btn btn-sm btn-light">acquista</button>
+
+          </div>
+          <p class="text-white">{{prod.prezzo}} <strong>€</strong></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

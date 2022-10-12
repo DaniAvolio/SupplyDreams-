@@ -9,6 +9,7 @@ import { CarrelloComponent } from './carrello/carrello.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { FormsModule } from '@angular/forms';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ProdottoComponent } from './prodotto/prodotto.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     ProdottiComponent,
     CarrelloComponent,
     LogInComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ProdottoComponent
   ],
   imports: [
     BrowserModule,
