@@ -8,6 +8,7 @@ import { ProdottiComponent } from './prodotti/prodotti.component';
 import { CarrelloComponent } from './carrello/carrello.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { FormsModule } from '@angular/forms';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     ProdottiComponent,
     CarrelloComponent,
-    LogInComponent
+    LogInComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
