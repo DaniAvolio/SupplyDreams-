@@ -1,1 +1,37 @@
-<p>prodotto works!</p>
+<div style="margin:5px">
+<img [routerLink]="['/prodotti']" src="https://cdn-icons-png.flaticon.com/512/507/507257.png" alt="" width="20" height="20">
+</div>
+<div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
+  <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+    <h1 class="display-6 fw-bold lh-1">{{prodotto?.nome}} <h3 class="display-10">{{prodotto?.marca}}</h3></h1>
+    <p class="lead">{{prodotto?.desc}}</p>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
+      <h2><strong>€{{prodotto?.prezzo}}</strong></h2>
+      <button [routerLink]="['/carrello']" type="button" class="btn btn-outline-secondary btn-lg px-4">Acquista</button>
+    </div>
+  </div>
+  <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
+      <img class="rounded-lg-3" src="{{prodotto?.foto}}" alt="" width="400" height="400">
+  </div>
+  <div><div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+    <div class="feature col">
+      <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-secondary fs-2 mb-3">
+        <svg class="bi" width="5em" height="1em"><use xlink:href="#collection"></use></svg>
+      </div>
+      <h3 class="fs-2">{{prodotto?.feat}}</h3>
+    </div>
+    <div class="feature col">
+      <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-secondary fs-2 mb-3">
+        <svg class="bi" width="5em" height="1em"><use xlink:href="#people-circle"></use></svg>
+      </div>
+      <h3 class="fs-2">{{prodotto?.feat1}}</h3>
+    </div>
+    <div class="feature col">
+      <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-secondary fs-2 mb-3">
+        <svg class="bi" width="5em" height="1em"><use xlink:href="#toggles2"></use></svg>
+      </div>
+      <h3 class="fs-2">{{prodotto?.feat2}}</h3>
+    </div>
+  </div></div>
+</div>
+

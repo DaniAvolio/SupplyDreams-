@@ -1,26 +1,36 @@
 <div class=" container input-group flex-nowrap">
   <span class="input-group-text" id="addon-wrapping"><img src="https://cdn-icons-png.flaticon.com/512/54/54481.png" alt="" width="15" height="15"></span>
-  <input type="text" class="form-control" placeholder="Cerca Prodotto" aria-label="Username" aria-describedby="addon-wrapping">
+  <input type="text" class="form-control" placeholder="Cerca x categoria (proteine, creatina)" aria-label="Username" aria-describedby="addon-wrapping"
+  [(ngModel)]="ricerca">
+
 </div>
+<br>
+<h5 class="container">Stai Cercando : {{ricerca | lowercase}} </h5>
 <br><br>
+
 <!-- row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3 -->
-<div class="d-flex flex-wrap justify-content-center py-3 mb-4 row row-cols-1 row-cols-sm-2 row-cols-md-5 g-1  " style="padding: 3vh;" *ngFor="let prod of prodotti">
+<div style="border: 1px solid black;"
+ class="d-flex flex-wrap justify-content-center py-3 mb-4 row row-cols-1 row-cols-sm-2 row-cols-md-5 g-1  " style="padding: 3vh;"
+  *ngFor="let prod of prodotti | filtraArray:ricerca: 'categoria'">
 
   <div class=" text-center">
     <div class="card shadow-sm ">
-      <p><strong>{{prod.marca}}</strong></p>
-      <img class="container" src="{{prod.foto}}" alt="" width="" height="">
-      <br>
+      <p class=" text-black"
+       style="margin: auto; padding: 0.1rem; border: 1px solid black;">
+       <strong>{{prod.marca}}</strong>
+      <img [routerLink]="['/prodotti', prod.slug]" class="" src="{{prod.foto}}" alt="" width="250" height="250" >
+    </p>
       <div class="card-body bg-secondary">
-        <p class="card-text text-white"><strong>{{prod.nome}}</strong></p>
+        <p [routerLink]="['/prodotti', prod.slug]" class="card-text text-black bg-light" style="margin: auto; padding: 0.05rem; border: 1px solid black; border-radius: 0.3rem;">
+          <strong >{{prod.nome}}</strong></p>
         <p class="card-text text-white">{{prod.desc}}</p>
 
         <div class="d-flex justify-content-between align-items-center">
           <div class="btn-group">
-            <button [routerLink]="['/prodotti', prod.slug]" type="button" class="btn btn-sm btn-light">acquista</button>
+            <button [routerLink]="['/carrello']" type="button" class="btn btn-sm btn-light">acquisto rapido</button>
 
           </div>
-          <p class="text-white">{{prod.prezzo}} <strong>€</strong></p>
+          <p class="text-white"> <strong>€{{prod.prezzo}}</strong></p>
         </div>
       </div>
     </div>

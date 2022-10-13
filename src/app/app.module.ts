@@ -10,6 +10,7 @@ import { LogInComponent } from './log-in/log-in.component';
 import { FormsModule } from '@angular/forms';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ProdottoComponent } from './prodotto/prodotto.component';
+import { FiltraArrayPipe } from './filtra-array.pipe';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ProdottoComponent } from './prodotto/prodotto.component';
     CarrelloComponent,
     LogInComponent,
     PageNotFoundComponent,
-    ProdottoComponent
+    ProdottoComponent,
+    FiltraArrayPipe
   ],
   imports: [
     BrowserModule,

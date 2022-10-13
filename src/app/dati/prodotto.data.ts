@@ -4,5 +4,9 @@ export type Prodotto = {
   foto: String,
   prezzo: Number,
   marca:String,
-  desc:String
+  desc:String,
+  categoria:String,
+  feat:string,
+  feat1:string,
+  feat2:string
 }
