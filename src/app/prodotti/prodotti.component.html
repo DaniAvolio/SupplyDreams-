@@ -5,11 +5,34 @@
 
 </div>
 <br>
-<h5 class="container">Stai Cercando : {{ricerca | lowercase}} </h5>
+<h5 class="container">{{ricerca | lowercase}} </h5>
 <br><br>
 
-<!-- row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3 -->
-<div style="border: 1px solid black;"
+<div class="card-group justify-content-center bg-light ">
+<div *ngFor="let prod of prodotti | filtraArray:ricerca:'categoria'" class="card-group justify-content-center">
+  <!-- <div class="card" style="max-width: 320px; margin-left: 10px;">
+    <h4 class="card-title text-center card-header">{{prod.nome}}</h4>
+    <img class="card-img-top" src="{{prod.foto}}" alt="Card image" width="300" height="300">
+    <div class="align-content-center card-margin card-text text-justify">{{prod.desc}}</div>
+</div> -->
+<div class="card" style="width: 18rem; margin: 15px;">
+  <img [routerLink]="['/prodotti', prod.slug]" src="{{prod.foto}}" class="card-img-top" alt="..." width="250">
+  <div class="card-body">
+    <p [routerLink]="['/prodotti', prod.slug]" class="text-center" ><strong>{{prod.nome}}</strong></p>
+    <p class="text-start">prodotto della {{prod.marca}}</p>
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="btn-group">
+        <p class="card-text"> <strong>€{{prod.prezzo}}</strong></p>
+      </div>
+      <button [routerLink]="['/carrello']" style="border: 1px solid black" class="text-black btn btn-light">Acquista ora</button>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+
+<!-- <div style="border: 1px solid black;"
  class="d-flex flex-wrap justify-content-center py-3 mb-4 row row-cols-1 row-cols-sm-2 row-cols-md-5 g-1  " style="padding: 3vh;"
   *ngFor="let prod of prodotti | filtraArray:ricerca: 'categoria'">
 
@@ -35,4 +58,4 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
