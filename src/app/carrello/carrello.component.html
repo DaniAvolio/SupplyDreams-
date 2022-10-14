@@ -7,11 +7,15 @@
       <h6 class="my-0 text-black">{{prod.nome}}</h6>
         <small class="text-muted">{{prod.marca}}</small>
       </div>
-      <span class="text-black">${{prod.prezzo}}</span>
+      <span class="text-black">€{{prod.prezzo}}</span>
       <button (click)="rimuovi(prod)" class="btn btn-outline-secondary">x</button>
     </li>
   </ul>
   <div class="text-center">
     <button [routerLink]="['/carrello', 'checkout']" class=" btn btn-outline-secondary align-items-center">Completa Acquisto</button>
-    </div>
+    <br>
+    <h4 style="padding: 20px;">€{{totale | number : '1.2-2'}}</h4>
+  </div>
 </div>
+
+

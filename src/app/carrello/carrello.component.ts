@@ -10,7 +10,7 @@ import { ProdottiComponent } from '../prodotti/prodotti.component';
 })
 export class CarrelloComponent implements OnInit {
   prodotti: Prodotto[] = []
-
+  totale: any = window.localStorage.getItem("tot")
   carrello: Prodotto[] = []
 
   constructor(private prodserv:ProdottoService) {
@@ -20,11 +20,14 @@ export class CarrelloComponent implements OnInit {
 
   ngOnInit(): void {
 
+
+
   }
 
   rimuovi(prod:Prodotto){
     prod.selezionato = false
-    // this.totale=this.totale-<number>prod.prezzo
+    this.totale=this.totale-<number>prod.prezzo
+    window.localStorage.setItem("tot",this.totale+"")
   }
   totaleprezzo(){
   }

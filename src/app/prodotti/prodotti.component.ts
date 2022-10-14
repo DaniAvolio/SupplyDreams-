@@ -13,7 +13,7 @@ export class ProdottiComponent implements OnInit {
 
   prodotti: Prodotto[] = []
   ricerca= ""
-  @Input() totale: number = 0
+  totale: number = 0
 
   constructor(private prodserv:ProdottoService) {
     this.prodotti = prodserv.prodotti
@@ -24,10 +24,15 @@ export class ProdottiComponent implements OnInit {
   AggiungiACarrello(prod:Prodotto){
     prod.selezionato=true
     this.totale= this.totale+<number>prod.prezzo
+    window.localStorage.setItem("tot",this.totale+"")
   }
   RimuovidaCarrello(prod:Prodotto){
     prod.selezionato=false
     this.totale= this.totale-<NumberFormatStyle>prod.prezzo
+    window.localStorage.setItem("tot",this.totale+"")
+    console.log(this.totale);
+
+
   }
 
 
