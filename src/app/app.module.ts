@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ProdottoComponent } from './prodotto/prodotto.component';
 import { FiltraArrayPipe } from './filtra-array.pipe';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { FiltraArrayPipe } from './filtra-array.pipe';
     LogInComponent,
     PageNotFoundComponent,
     ProdottoComponent,
-    FiltraArrayPipe
+    FiltraArrayPipe,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { NumberFormatStyle } from '@angular/common';
+import { Component, OnInit, Input} from '@angular/core';
 import { Prodotto } from '../dati/prodotto.data'
-import { ProdottoService } from '../prodotto.service';
+import { ProdottoService, } from '../prodotto.service';
 
 @Component({
   selector: 'app-prodotti',
@@ -8,9 +9,11 @@ import { ProdottoService } from '../prodotto.service';
   styleUrls: ['./prodotti.component.css']
 })
 export class ProdottiComponent implements OnInit {
+[x: string]: any;
 
   prodotti: Prodotto[] = []
   ricerca= ""
+  @Input() totale: number = 0
 
   constructor(private prodserv:ProdottoService) {
     this.prodotti = prodserv.prodotti
@@ -18,5 +21,14 @@ export class ProdottiComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  AggiungiACarrello(prod:Prodotto){
+    prod.selezionato=true
+    this.totale= this.totale+<number>prod.prezzo
+  }
+  RimuovidaCarrello(prod:Prodotto){
+    prod.selezionato=false
+    this.totale= this.totale-<NumberFormatStyle>prod.prezzo
+  }
+
 
 }

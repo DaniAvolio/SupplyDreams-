@@ -1,0 +1,57 @@
+<div class="container row g-3">
+  <div class="col-sm-6">
+    <label for="firstName" class="form-label">Nome</label>
+    <input type="text" class="form-control" id="firstName" placeholder="Daniele" value="" required="">
+    <div class="invalid-feedback">
+      Valid first name is required.
+    </div>
+  </div>
+
+  <div class="col-sm-6">
+    <label for="lastName" class="form-label">Cognome</label>
+    <input type="text" class="form-control" id="lastName" placeholder="Avolio" value="" required="">
+    <div class="invalid-feedback">
+      Valid last name is required.
+    </div>
+  </div>
+
+  <div class="col-sm-6">
+    <label for="telephone" class="form-label">Telefono</label>
+    <div class="input-group">
+    <span class="input-group-text" id="addon-wrapping">+39</span>
+    <input type="text" class="form-control" placeholder="telefono" aria-label="Username" aria-describedby="addon-wrapping"
+    >
+  </div>
+
+  </div>
+
+  <div class="col-12">
+    <label for="email" class="form-label">Email <span class="text-muted">(Opzionale)</span></label>
+    <input type="email" class="form-control" id="email" placeholder="you@example.com">
+    <div class="invalid-feedback">
+      Please enter a valid email address for shipping updates.
+    </div>
+  </div>
+
+  <div class="col-12">
+    <label for="address" class="form-label">Indirizzo</label>
+    <input type="text" class="form-control" id="address" placeholder="corso genova 32" required="">
+    <div class="invalid-feedback">
+      Please enter your shipping address.
+    </div>
+  </div>
+
+  <div class="col-12">
+    <label for="address2" class="form-label">Città <span class="text-muted"></span></label>
+    <input type="text" class="form-control" id="address2" placeholder="Milano">
+  </div>
+
+  <div class="col-12">
+    <label for="address2" class="form-label">Cap <span class="text-muted"></span></label>
+    <input type="text" class="form-control" id="address2" placeholder="27029">
+  </div>
+</div>
+<br>
+<div class="text-center">
+<button class=" btn btn-outline-secondary align-items-center">Conferma Ordine</button>
+</div>

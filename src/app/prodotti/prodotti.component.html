@@ -10,52 +10,22 @@
 
 <div class="card-group justify-content-center bg-light ">
 <div *ngFor="let prod of prodotti | filtraArray:ricerca:'categoria'" class="card-group justify-content-center">
-  <!-- <div class="card" style="max-width: 320px; margin-left: 10px;">
-    <h4 class="card-title text-center card-header">{{prod.nome}}</h4>
-    <img class="card-img-top" src="{{prod.foto}}" alt="Card image" width="300" height="300">
-    <div class="align-content-center card-margin card-text text-justify">{{prod.desc}}</div>
-</div> -->
 <div class="card" style="width: 18rem; margin: 15px;">
-  <img [routerLink]="['/prodotti', prod.slug]" src="{{prod.foto}}" class="card-img-top" alt="..." width="250">
-  <div class="card-body">
+  <button class="btn" style="padding:none; margin:none; border: none;"><img [routerLink]="['/prodotti', prod.slug]" src="{{prod.foto}}" class="card-img-top" alt="..." width="250">
+  </button>
+    <div class="card-body">
     <p [routerLink]="['/prodotti', prod.slug]" class="text-center" ><strong>{{prod.nome}}</strong></p>
     <p class="text-start">prodotto della {{prod.marca}}</p>
     <div class="d-flex justify-content-between align-items-center">
       <div class="btn-group">
         <p class="card-text"> <strong>€{{prod.prezzo}}</strong></p>
       </div>
-      <button [routerLink]="['/carrello']" style="border: 1px solid black" class="text-black btn btn-light">Acquista ora</button>
+      <button *ngIf="prod.selezionato==false" (click)="AggiungiACarrello(prod)" style="border: 1px solid black" class="text-black btn btn-light">Acquista</button>
+      <button *ngIf="prod.selezionato==true" (click)="RimuovidaCarrello(prod)" style="border: 1px solid black" class="text-white btn btn-secondary">Rimuovi</button>
+
     </div>
   </div>
 </div>
 </div>
 </div>
-
-
-<!-- <div style="border: 1px solid black;"
- class="d-flex flex-wrap justify-content-center py-3 mb-4 row row-cols-1 row-cols-sm-2 row-cols-md-5 g-1  " style="padding: 3vh;"
-  *ngFor="let prod of prodotti | filtraArray:ricerca: 'categoria'">
-
-  <div class=" text-center">
-    <div class="card shadow-sm ">
-      <p class=" text-black"
-       style="margin: auto; padding: 0.1rem; border: 1px solid black;">
-       <strong>{{prod.marca}}</strong>
-      <img [routerLink]="['/prodotti', prod.slug]" class="" src="{{prod.foto}}" alt="" width="250" height="250" >
-    </p>
-      <div class="card-body bg-secondary">
-        <p [routerLink]="['/prodotti', prod.slug]" class="card-text text-black bg-light" style="margin: auto; padding: 0.05rem; border: 1px solid black; border-radius: 0.3rem;">
-          <strong >{{prod.nome}}</strong></p>
-        <p class="card-text text-white">{{prod.desc}}</p>
-
-        <div class="d-flex justify-content-between align-items-center">
-          <div class="btn-group">
-            <button [routerLink]="['/carrello']" type="button" class="btn btn-sm btn-light">acquisto rapido</button>
-
-          </div>
-          <p class="text-white"> <strong>€{{prod.prezzo}}</strong></p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div> -->
+<!-- <p>{{totale | number : '1.2-2'}}</p> -->

@@ -7,6 +7,7 @@ import{CarrelloComponent} from './carrello/carrello.component'
 import{LogInComponent} from './log-in/log-in.component'
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ProdottoComponent } from './prodotto/prodotto.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 const routes: Routes = [
 {path: '' , component: HomeComponent},
@@ -14,6 +15,7 @@ const routes: Routes = [
 {path: 'carrello',component: CarrelloComponent},
 {path: 'log-in',component: LogInComponent},
 {path:"prodotti/:slug", component: ProdottoComponent},
+{path:"carrello/checkout", component: CheckoutComponent},
 {path: 'page-not-found', component: PageNotFoundComponent},
 {path: '**', redirectTo: 'page-not-found'},
 ];

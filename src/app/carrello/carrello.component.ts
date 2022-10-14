@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Prodotto } from '../dati/prodotto.data';
+import { ProdottoService } from '../prodotto.service';
+import { ProdottiComponent } from '../prodotti/prodotti.component';
 
 @Component({
   selector: 'app-carrello',
@@ -6,10 +9,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./carrello.component.css']
 })
 export class CarrelloComponent implements OnInit {
+  prodotti: Prodotto[] = []
 
-  constructor() { }
+  carrello: Prodotto[] = []
+
+  constructor(private prodserv:ProdottoService) {
+    this.prodotti = prodserv.prodotti
+
+   }
 
   ngOnInit(): void {
+
+  }
+
+  rimuovi(prod:Prodotto){
+    prod.selezionato = false
+    // this.totale=this.totale-<number>prod.prezzo
+  }
+  totaleprezzo(){
   }
 
 }
