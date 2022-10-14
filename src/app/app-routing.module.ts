@@ -8,6 +8,7 @@ import{LogInComponent} from './log-in/log-in.component'
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ProdottoComponent } from './prodotto/prodotto.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { RegardsComponent } from './regards/regards.component';
 
 const routes: Routes = [
 {path: '' , component: HomeComponent},
@@ -16,6 +17,7 @@ const routes: Routes = [
 {path: 'log-in',component: LogInComponent},
 {path:"prodotti/:slug", component: ProdottoComponent},
 {path:"carrello/checkout", component: CheckoutComponent},
+{path:"regards", component: RegardsComponent},
 {path: 'page-not-found', component: PageNotFoundComponent},
 {path: '**', redirectTo: 'page-not-found'},
 ];

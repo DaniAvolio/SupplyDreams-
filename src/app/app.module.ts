@@ -12,6 +12,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { ProdottoComponent } from './prodotto/prodotto.component';
 import { FiltraArrayPipe } from './filtra-array.pipe';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { RegardsComponent } from './regards/regards.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { CheckoutComponent } from './checkout/checkout.component';
     PageNotFoundComponent,
     ProdottoComponent,
     FiltraArrayPipe,
-    CheckoutComponent
+    CheckoutComponent,
+    RegardsComponent
   ],
   imports: [
     BrowserModule,
