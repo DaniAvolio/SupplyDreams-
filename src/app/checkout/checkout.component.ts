@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-checkout',
   templateUrl: './checkout.component.html',
@@ -10,6 +10,9 @@ export class CheckoutComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+  onSubmit(ngform: NgForm) {
+    console.log(ngform);
   }
 
 }

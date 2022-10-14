@@ -1,17 +1,43 @@
+<form
+#f="ngForm"
+(ngSubmit)="onSubmit(f)"
+class="needs-validation"
+novalidate=""
+>
 <div class="container row g-3">
   <div class="col-sm-6">
     <label for="firstName" class="form-label">Nome</label>
-    <input type="text" class="form-control" id="firstName" placeholder="Daniele" value="" required="">
-    <div class="invalid-feedback">
-      Valid first name is required.
+    <input
+    ngModel
+    name="firstName"
+    type="text"
+    class="form-control"
+    id="firstName"
+    required
+    #firstName="ngModel"
+    >
+    <div
+      class="help-block"
+     *ngIf="!firstName.valid && firstName.touched">
+      Devi inserire un Nome valido
     </div>
   </div>
 
   <div class="col-sm-6">
     <label for="lastName" class="form-label">Cognome</label>
-    <input type="text" class="form-control" id="lastName" placeholder="Avolio" value="" required="">
-    <div class="invalid-feedback">
-      Valid last name is required.
+    <input
+    ngModel
+    name="lastName"
+    type="text"
+    class="form-control"
+    id="lastName"
+    required
+    #lastname="ngModel">
+
+    <div
+      class="help-block"
+     *ngIf="!lastname.valid && lastname.touched">
+      Devi inserire un Cognome valido
     </div>
   </div>
 
@@ -19,39 +45,109 @@
     <label for="telephone" class="form-label">Telefono</label>
     <div class="input-group">
     <span class="input-group-text" id="addon-wrapping">+39</span>
-    <input type="text" class="form-control" placeholder="telefono" aria-label="Username" aria-describedby="addon-wrapping"
+    <input
+    ngModel
+    name="telephone"
+    type="text"
+    class="form-control"
+    id="telephone"
+    placeholder="telephone"
+    required=""
+    oldautocomplete="remove"
+    autocomplete="off"
+    #tel="ngModel"
     >
   </div>
-
+  <div
+  class="help-block"
+ *ngIf="!tel.valid && tel.touched">
+  Devi inserire un Numero di Telefono valido
+</div>
   </div>
 
   <div class="col-12">
     <label for="email" class="form-label">Email <span class="text-muted">(Opzionale)</span></label>
-    <input type="email" class="form-control" id="email" placeholder="you@example.com">
-    <div class="invalid-feedback">
-      Please enter a valid email address for shipping updates.
-    </div>
+    <input
+    ngModel
+    name="email"
+    type="email"
+    class="form-control"
+    id="email"
+    placeholder="you@example.com"
+    required=false
+    #email= ngModel
+    >
+    <div
+    class="help-block"
+    *ngIf="!email.valid && email.touched"
+    >
+    Perfavore inserisci l'inidirzzo email
+  </div>
   </div>
 
   <div class="col-12">
     <label for="address" class="form-label">Indirizzo</label>
-    <input type="text" class="form-control" id="address" placeholder="corso genova 32" required="">
-    <div class="invalid-feedback">
-      Please enter your shipping address.
-    </div>
+    <input
+    ngModel
+    name="indirizzo"
+    type="text"
+    class="form-control"
+    id="indirizzo"
+    placeholder="corso Milano 24"
+    required=true
+    #ind= ngModel>
+    <div
+    class="help-block"
+    *ngIf="!ind.valid && ind.touched"
+    >
+    Perfavore inserisci un indirizzo corretto
+  </div>
   </div>
 
   <div class="col-12">
     <label for="address2" class="form-label">Città <span class="text-muted"></span></label>
-    <input type="text" class="form-control" id="address2" placeholder="Milano">
+    <input
+    ngModel
+    name="cit"
+    type="text"
+    class="form-control"
+    id="cit"
+    placeholder="Milano"
+    required=true
+    #cit= ngModel
+    >
+    <div
+    class="help-block"
+    *ngIf="!cit.valid && cit.touched"
+    >
+    Perfavore inserisci una città corretta
   </div>
+  </div>
+
+
 
   <div class="col-12">
     <label for="address2" class="form-label">Cap <span class="text-muted"></span></label>
-    <input type="text" class="form-control" id="address2" placeholder="27029">
+    <input
+    ngModel
+    name="cap"
+    type="text"
+    class="form-control"
+    id="cap"
+    placeholder="27029"
+    required=true
+    #cap= ngModel>
+    <div
+    class="help-block"
+    *ngIf="!cap.valid && cap.touched"
+    >
+    Perfavore inserisci un cap corretto
   </div>
+  </div>
+
 </div>
 <br>
 <div class="text-center">
-<button class=" btn btn-outline-secondary align-items-center">Conferma Ordine</button>
+<button type="submit" [disabled]="!f.valid" class=" btn btn-outline-secondary align-items-center">Conferma Ordine</button>
 </div>
+</form>
