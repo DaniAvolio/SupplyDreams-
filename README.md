@@ -1,8 +1,14 @@
-# ProgettoAngular
+## ProgettoAngular
+
 E-COMMERCE
+ecommerce di integratori sportivi 
 
+BUG RIMASTI:
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.5.
+ perzzo totale del carrello sfasato se rimuovi i proditti da prodotticomponent 
+ 
+ 
+non inserita un immagini che fa vedere quanti elementi sono nel carrello
 
 ## Development server
 
