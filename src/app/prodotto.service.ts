@@ -52,7 +52,7 @@ export class ProdottoService {
 
   constructor() { }
 
-  public AggiungiACarrello(prod:Prodotto){
+  aggiungiACarrello(prod:Prodotto){
     this._carrello.push(prod)
   }
   togliDaCarrello(prod:Prodotto) {

@@ -25,6 +25,7 @@ export class ProdottiComponent implements OnInit {
     prod.selezionato=true
     this.totale= this.totale+<number>prod.prezzo
     window.localStorage.setItem("tot",this.totale+"")
+    this.prodserv.aggiungiACarrello(prod)
   }
   RimuovidaCarrello(prod:Prodotto){
     prod.selezionato=false

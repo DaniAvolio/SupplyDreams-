@@ -15,6 +15,7 @@ export class CarrelloComponent implements OnInit {
 
   constructor(private prodserv:ProdottoService) {
     this.prodotti = prodserv.prodotti
+    this.carrello = prodserv._carrello
 
    }
 
