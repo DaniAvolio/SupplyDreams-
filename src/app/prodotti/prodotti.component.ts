@@ -14,26 +14,24 @@ export class ProdottiComponent implements OnInit {
   prodotti: Prodotto[] = []
   ricerca= ""
   totale: number = 0
+  carrello: Prodotto[] = []
+
 
   constructor(private prodserv:ProdottoService) {
     this.prodotti = prodserv.prodotti
+    this.carrello = prodserv.carrello
    }
 
   ngOnInit(): void {
   }
   AggiungiACarrello(prod:Prodotto){
-    prod.selezionato=true
-    this.totale= this.totale+<number>prod.prezzo
-    window.localStorage.setItem("tot",this.totale+"")
+    prod.aggiunto=true
     this.prodserv.aggiungiACarrello(prod)
+    this.carrello= this.prodserv._carrello
   }
   RimuovidaCarrello(prod:Prodotto){
-    prod.selezionato=false
-    this.totale= this.totale-<NumberFormatStyle>prod.prezzo
-    window.localStorage.setItem("tot",this.totale+"")
-    console.log(this.totale);
-
-
+    prod.aggiunto=false
+    this.prodserv.togliDaCarrello(prod)
   }
 
 

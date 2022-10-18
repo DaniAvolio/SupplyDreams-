@@ -20,9 +20,8 @@
       <div class="btn-group">
         <p class="card-text"> <strong>€{{prod.prezzo}}</strong></p>
       </div>
-      <button *ngIf="prod.selezionato==false" (click)="AggiungiACarrello(prod)" style="border: 1px solid black" class="text-black btn btn-light">Acquista</button>
-      <button *ngIf="prod.selezionato==true" (click)="RimuovidaCarrello(prod)" style="border: 1px solid black" class="text-white btn btn-secondary">Rimuovi</button>
-
+      <button *ngIf="prod.aggiunto==false"  (click)="AggiungiACarrello(prod)" style="border: 1px solid black" class="text-black btn btn-light">Acquista</button>
+      <button *ngIf="prod.aggiunto==true" (click)="RimuovidaCarrello(prod)" style="border: 1px solid black" class="text-white btn btn-secondary">Rimuovi</button>
     </div>
   </div>
 </div>

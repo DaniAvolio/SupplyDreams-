@@ -1,6 +1,7 @@
 
-<div class="container text-center col-md-5 col-lg-4 order-md-last">
-  <h4 style="margin:auto" class=" align-items-center mb-3">Carrello</h4>
+<div *ngIf="carrello.length>0" class="container text-center col-md-5 col-lg-4 order-md-last">
+  <h4 style="margin:auto" class=" align-items-center mb-3">Carrello
+ <span class="badge bg-secondary rounded-pill">{{carrello.length}}</span></h4>
   <ul class="list-group mb-3"  *ngFor="let prod of carrello ">
     <li class="list-group-item d-flex justify-content-between lh-sm">
       <img [routerLink]="['/prodotti', prod.slug]" src="{{prod.foto}}" alt="" width="50" height="50">
@@ -15,7 +16,21 @@
   <div class="text-center">
     <button [routerLink]="['/carrello', 'checkout']" class=" btn btn-outline-secondary align-items-center">Completa Acquisto</button>
     <br>
-    <h5 style="padding: 20px;">Totale €{{totale | number : '1.2-2'}}</h5>
+
+    <h5 style="padding: 20px;">Totale : €{{totale | number:'1.2-2'}}</h5>
   </div>
 </div>
-
+<div *ngIf="carrello.length<=0" class="container text-center col-md-5 col-lg-4 order-md-last">
+  <h4 style="margin:auto" class=" align-items-center mb-3">Carrello
+ <span class="badge bg-secondary rounded-pill">{{carrello.length}}</span></h4>
+ <div class="px-4 py-5 my-5 text-center">
+  <img class="d-block mx-auto mb-4" src="https://cdn-icons-png.flaticon.com/512/2038/2038854.png" alt="" width="50" height="50">
+  <h5 class=" fw-bold">IL carrello è vuoto! </h5>
+  <div class="col-lg-6 mx-auto">
+    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+      <button type="button" class="btn btn-outline-secondary px-4" (click)="onTornaAProdotti()">Scopri i Prodotti</button>
+    </div>
+  </div>
+</div>
+</div>
+<!-- | number : '1.2-2'}} -->

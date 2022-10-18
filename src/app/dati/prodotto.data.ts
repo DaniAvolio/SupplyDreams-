@@ -1,5 +1,5 @@
 export type Prodotto = {
-  selezionato: boolean,
+  aggiunto: boolean,
   slug: String,
   nome: String,
   foto: String,

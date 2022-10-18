@@ -30,7 +30,7 @@ export class ProdottoComponent implements OnInit {
   ngOnInit(): void {
   }
   AggiungiACarrello(prod: Prodotto){
-    prod.selezionato=true
+    prod.aggiunto=true
   }
 
 }

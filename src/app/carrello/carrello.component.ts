@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Prodotto } from '../dati/prodotto.data';
 import { ProdottoService } from '../prodotto.service';
 import { ProdottiComponent } from '../prodotti/prodotti.component';
+import { flush } from '@angular/core/testing';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-carrello',
@@ -10,27 +12,27 @@ import { ProdottiComponent } from '../prodotti/prodotti.component';
 })
 export class CarrelloComponent implements OnInit {
   prodotti: Prodotto[] = []
-  totale: any = window.localStorage.getItem("tot")
   carrello: Prodotto[] = []
+  totale: number
 
-  constructor(private prodserv:ProdottoService) {
+  constructor(private prodserv:ProdottoService, private router:Router) {
     this.prodotti = prodserv.prodotti
     this.carrello = prodserv._carrello
-
+    this.totale = prodserv.totale
    }
 
   ngOnInit(): void {
-
-
-
   }
 
   rimuovi(prod:Prodotto){
-    prod.selezionato = false
-    this.totale=this.totale-<number>prod.prezzo
-    window.localStorage.setItem("tot",this.totale+"")
-  }
-  totaleprezzo(){
-  }
+    prod.aggiunto=false
+    this.prodserv.togliDaCarrello(prod)
+    this.carrello= this.prodserv.carrello
+    this.totale=this.prodserv.totale
+}
+onTornaAProdotti(){
+  this.router.navigate(["/prodotti"])
+}
+
 
 }
