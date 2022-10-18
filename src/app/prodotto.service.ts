@@ -67,6 +67,10 @@ export class ProdottoService {
     return this._prodotti.find(p => p.slug === slug)
   }
 
+  change(prod:Prodotto){
+    prod.aggiunto=true
+  }
+
   get prodotti() {
     return [...this._prodotti]
   }
