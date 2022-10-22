@@ -1,0 +1,12 @@
+<header class="container d-flex flex-wrap justify-content-center py-3 mb-4">
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+      <img src=".//src/assets/images/protein-powder.png" alt="" width="35" height="35">
+      <!-- https://cdn-icons-png.flaticon.com/512/833/833102.png -->
+      <span class="fs-4 h2">SupplyDreams</span>
+    </a>
+    <ul class="nav nav-pills text-white">
+      <li class="nav-item"><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" class="nav-link" aria-current="page"><span class="text-black">Home</span></a></li>
+      <li class="nav-item"><a routerLink="/prodotti" routerLinkActive="active" class="nav-link"><span class="text-black">Prodotti</span></a></li>
+      <li class="nav-item"><a routerLink="/carrello" routerLinkActive="active" class="nav-link"><span class="text-black"><img src="https://cdn-icons-png.flaticon.com/512/1170/1170576.png" width="25" height="25">{{carrello.length}}</span></a></li>  </ul>
+  </header>
+

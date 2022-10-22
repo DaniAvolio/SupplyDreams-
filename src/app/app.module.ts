@@ -13,6 +13,7 @@ import { ProdottoComponent } from './prodotto/prodotto.component';
 import { FiltraArrayPipe } from './filtra-array.pipe';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { RegardsComponent } from './regards/regards.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { RegardsComponent } from './regards/regards.component';
     ProdottoComponent,
     FiltraArrayPipe,
     CheckoutComponent,
-    RegardsComponent
+    RegardsComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
