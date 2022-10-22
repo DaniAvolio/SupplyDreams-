@@ -14,5 +14,4 @@ export class CheckoutComponent implements OnInit {
   onSubmit(ngform: NgForm) {
     console.log(ngform);
   }
-
 }

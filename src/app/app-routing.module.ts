@@ -9,11 +9,12 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { ProdottoComponent } from './prodotto/prodotto.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { RegardsComponent } from './regards/regards.component';
+import { AuthGuardService } from './auth-guard.service';
 
 const routes: Routes = [
 {path: '' , component: HomeComponent},
 {path: 'prodotti',component: ProdottiComponent},
-{path: 'carrello',component: CarrelloComponent},
+{path: 'carrello',component: CarrelloComponent, canActivate:[AuthGuardService]},
 {path: 'log-in',component: LogInComponent},
 {path:"prodotti/:slug", component: ProdottoComponent},
 {path:"carrello/checkout", component: CheckoutComponent},

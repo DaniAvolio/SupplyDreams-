@@ -10,7 +10,8 @@
         <small class="text-muted">{{prod.marca}}</small>
       </div>
       <span class="text-black">€{{prod.prezzo}}</span>
-      <button (click)="rimuovi(prod)" class="btn btn-outline-secondary">x</button>
+      <button (click)="rimuovi(prod)" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
     </li>
   </ul>
   <div class="text-center">
