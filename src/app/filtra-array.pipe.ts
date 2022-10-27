@@ -1,7 +1,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'filtraArray'
+  name: 'filtraArray',
+  pure: false
 })
 export class FiltraArrayPipe implements PipeTransform {
 
@@ -10,7 +11,7 @@ export class FiltraArrayPipe implements PipeTransform {
     {
       return array
     }
-    return array.filter( v => v[chiave] == valore)
+    return array.filter( v => v[chiave] === valore)
   }
 
 }
