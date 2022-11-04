@@ -8,9 +8,9 @@
 <h5 class="container">{{ricerca | lowercase}} </h5>
 <br><br>
 
-<div class="card-group justify-content-center bg-light ">
+<div class="card-group justify-content-center bg-light phone">
 <div *ngFor="let prod of prodotti | filtraArray:ricerca:'categoria'" class="card-group justify-content-center">
-<div class="card" style="width: 18rem; margin: 15px;">
+<div class="card design carddesign">
   <button class="btn" style="padding:none; margin:none; border: none;"><img [routerLink]="['/prodotti', prod.slug]" src="{{prod.foto}}" class="card-img-top" alt="..." width="250">
   </button>
     <div class="card-body">

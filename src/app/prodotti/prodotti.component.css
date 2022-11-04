@@ -1,0 +1,16 @@
+
+.design{
+  width: 18rem;
+   margin: 1.7vh;
+}
+@media screen and (max-width: 575.5px) {
+  .design{
+    margin: auto;
+    margin-bottom: 10px;
+    display: flex;
+    align-content: center;
+  }
+  .phone{
+    padding: 2vh;
+  }
+}
