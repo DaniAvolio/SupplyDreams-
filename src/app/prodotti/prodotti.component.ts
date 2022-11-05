@@ -13,7 +13,6 @@ export class ProdottiComponent implements OnInit {
 
   prodotti: Prodotto[] = []
   ricerca= ""
-  totale: number = 0
   carrello: Prodotto[] = []
 
 
@@ -28,6 +27,7 @@ export class ProdottiComponent implements OnInit {
     prod.aggiunto=true
     this.prodserv.aggiungiACarrello(prod)
     this.carrello= this.prodserv._carrello
+    alert(prod.nome + " aggiunto al carrello")
   }
   RimuovidaCarrello(prod:Prodotto){
     prod.aggiunto=false

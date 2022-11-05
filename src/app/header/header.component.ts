@@ -10,11 +10,21 @@ import { Prodotto } from '../dati/prodotto.data';
 export class HeaderComponent implements OnInit {
   carrello:Prodotto[] = []
 
-  constructor(private prodserv: ProdottoService) { }
+  constructor(private prodserv: ProdottoService) {
+
+   }
 
   ngOnInit(): void {
   }
 
-  
+  lunghezzacarrello():number{
+    this.carrello=this.prodserv._carrello
+    return this.carrello.length
+
+  }
+
+
+
+
 
 }

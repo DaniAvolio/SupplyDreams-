@@ -9,7 +9,7 @@ export class ProdottoService {
 
   private _prodotti : Prodotto[] = [
     {aggiunto:false, slug:"prod1", nome:"proteine whey concentrate",
-     foto:"https://static.sscontent.com/thumb/500/500/products/124/v1111855_prozis_100-real-whey-protein-1000-g_natural_newin_flavor.jpg",
+     foto:".//src/assets/images/ProtieneProzis1.jpg",
       prezzo:29.99, marca:"Prozis", desc:"proteine del siero del latte concentrate della prozis. Ideali prima o dopo il workout", categoria:"proteine", feat:"concentrate",feat1:"alta solubilità",feat2:"economiche"},
     {aggiunto:false, slug:"prod2", nome:"proteine whey isolate",
     foto:"https://static.sscontent.com/thumb/500/500/products/124/v1112423_prozis_100-real-whey-isolate-1000-g_banana-walnut_newin_flavor.jpg",
