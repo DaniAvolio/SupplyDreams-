@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { ProdottoService } from '../prodotto.service';
 @Component({
   selector: 'app-checkout',
   templateUrl: './checkout.component.html',
@@ -7,11 +8,12 @@ import { NgForm } from '@angular/forms';
 })
 export class CheckoutComponent implements OnInit {
 
-  constructor() { }
+  constructor(private prodserv:ProdottoService) { }
 
   ngOnInit(): void {
   }
   onSubmit(ngform: NgForm) {
+    this.prodserv.carrello.slice(0, this.prodserv.carrello.length)
     console.log(ngform);
   }
 }

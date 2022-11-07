@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ProdottoService } from '../prodotto.service';
 
 @Component({
   selector: 'app-regards',
@@ -8,11 +9,12 @@ import { Router } from '@angular/router';
 })
 export class RegardsComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  constructor(private router:Router, private prodserv: ProdottoService) { }
 
   ngOnInit(): void {
   }
   onTornaAHome(){
+
     this.router.navigate(["/"])
 
   }

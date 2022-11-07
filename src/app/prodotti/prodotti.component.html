@@ -18,6 +18,13 @@
       <div class="btn-group">
         <p class="card-text"> <strong>€{{prod.prezzo}}</strong></p>
       </div>
+      <select *ngIf="prod.quantita==0"  [(ngModel)]="quantitaselezionata" style="border-radius: 0.5vh">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
       <button *ngIf="prod.aggiunto==false"  (click)="AggiungiACarrello(prod)" style="border: 1px solid black" class="text-black btn btn-light">Acquista</button>
       <button *ngIf="prod.aggiunto==true" (click)="RimuovidaCarrello(prod)" style="border: 1px solid black" class="text-white btn btn-secondary">Rimuovi</button>
     </div>

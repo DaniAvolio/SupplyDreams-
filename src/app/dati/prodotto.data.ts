@@ -1,4 +1,5 @@
 export type Prodotto = {
+  quantita: number,
   aggiunto: boolean,
   slug: String,
   nome: String,

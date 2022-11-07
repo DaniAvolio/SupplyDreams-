@@ -30,7 +30,7 @@ export class ProdottoComponent implements OnInit {
   ngOnInit(): void {
   }
   AggiungiACarrello(){
-    this.prodottoService.aggiungiACarrello(<Prodotto>this.prodotto)
+    this.prodottoService.aggiungiACarrello(<Prodotto>this.prodotto, 1)
     this.prodottoService.change(<Prodotto>this.prodotto)
   }
 

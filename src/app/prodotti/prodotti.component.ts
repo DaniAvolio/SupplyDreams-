@@ -10,7 +10,7 @@ import { ProdottoService, } from '../prodotto.service';
 })
 export class ProdottiComponent implements OnInit {
 [x: string]: any;
-
+  quantitaselezionata: number = 1
   prodotti: Prodotto[] = []
   ricerca= ""
   carrello: Prodotto[] = []
@@ -24,10 +24,11 @@ export class ProdottiComponent implements OnInit {
   ngOnInit(): void {
   }
   AggiungiACarrello(prod:Prodotto){
+    var q= this.quantitaselezionata
     prod.aggiunto=true
-    this.prodserv.aggiungiACarrello(prod)
+    this.prodserv.aggiungiACarrello(prod, q)
     this.carrello= this.prodserv._carrello
-    alert(prod.nome + " aggiunto al carrello")
+    alert("x"+prod.quantita + " " + prod.nome + " aggiunto al carrello")
   }
   RimuovidaCarrello(prod:Prodotto){
     prod.aggiunto=false

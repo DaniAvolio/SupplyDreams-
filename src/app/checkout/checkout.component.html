@@ -150,6 +150,6 @@ novalidate=""
 </div>
 <br>
 <div class="text-center">
-<button [routerLink]="['/regards']" type="submit" [disabled]="!f.valid" class=" btn btn-outline-secondary align-items-center">Conferma Ordine</button>
+<button (click)="onSubmit(f)" [routerLink]="['/regards']" type="submit" [disabled]="!f.valid" class=" btn btn-outline-secondary align-items-center">Conferma Ordine</button>
 </div>
 </form>
