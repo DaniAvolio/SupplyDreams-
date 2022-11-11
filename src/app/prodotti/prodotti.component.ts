@@ -9,7 +9,6 @@ import { ProdottoService, } from '../prodotto.service';
   styleUrls: ['./prodotti.component.css']
 })
 export class ProdottiComponent implements OnInit {
-[x: string]: any;
   quantitaselezionata: number = 1
   prodotti: Prodotto[] = []
   ricerca= ""
@@ -17,11 +16,15 @@ export class ProdottiComponent implements OnInit {
 
 
   constructor(private prodserv:ProdottoService) {
-    this.prodotti = prodserv.prodotti
     this.carrello = prodserv.carrello
    }
 
   ngOnInit(): void {
+    this.prodserv.getProdotti(this.prodserv.url)
+    .subscribe((data: any) =>{
+      this.prodotti = Object.keys(data).map((key) => {return data[key]})
+      console.log(this.prodotti)
+    })
   }
   AggiungiACarrello(prod:Prodotto){
     var q= this.quantitaselezionata

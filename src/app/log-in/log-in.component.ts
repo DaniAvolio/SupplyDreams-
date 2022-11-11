@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-log-in',
@@ -10,7 +11,7 @@ import { NgForm } from '@angular/forms';
 export class LogInComponent implements OnInit {
 
   islog : boolean
-  constructor(private as: AuthService) {
+  constructor(private as: AuthService, private router:Router) {
     this.islog = as.LoggedIn
    }
 
@@ -22,10 +23,7 @@ export class LogInComponent implements OnInit {
   onLogin(){
     this.as.login()
     this.islog = this.as.LoggedIn
-  }
-  onLogout(){
-    this.as.logout()
-    this.islog = this.as.LoggedIn
+    this.router.navigate(["/account"])
   }
 
 }

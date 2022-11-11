@@ -14,6 +14,8 @@ import { FiltraArrayPipe } from './filtra-array.pipe';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { RegardsComponent } from './regards/regards.component';
 import { HeaderComponent } from './header/header.component';
+import { HttpClientModule} from '@angular/common/http';
+import { AccountComponent } from './account/account.component'
 
 @NgModule({
   declarations: [
@@ -27,12 +29,14 @@ import { HeaderComponent } from './header/header.component';
     FiltraArrayPipe,
     CheckoutComponent,
     RegardsComponent,
-    HeaderComponent
+    HeaderComponent,
+    AccountComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,266 @@
+ <div class="modal modal-signin position-static d-block bg-white py-2" tabindex="-1" role="dialog" id="modalSignin"> -->
+  <!-- *ngIf="islog==true" -->
+  <div class="modal-dialog" role="document">
+    <div class="modal-content rounded-4 shadow">
+      <div class="modal-header p-5 pb-4 border-bottom-0">
+        <h1 class="fw-bold mb-0 fs-2">Account</h1>
+      </div>
+      <div class="modal-body p-5 pt-0">
+        <form class="">
+          <div class="form-floating mb-1">
+            <p>Benvenuto in SupplyDreams, Sei un Admin</p>
+          </div>
+          <h1>Inserimento Prodotto</h1>
+          <form
+          #f="ngForm"
+          (ngSubmit)="onSubmit(f)"
+          class="needs-validation"
+          novalidate="">
+          <div class="form-floating mb-3">
+            <input
+            ngModel quantita
+            name="quantita"
+            type="text"
+            class="form-control"
+            id="quantita"
+            placeholder="you@example.com"
+            required=true
+            #quantita= ngModel>
+            <label>quantita</label>
+            <div
+            class="help-block"
+            *ngIf="!quantita.valid && quantita.touched"
+            >
+            <div *ngIf="quantita.errors?.['required']">
+              quantita obbligatorio
+            </div>
+          </div>
+          </div>
+          <div class="form-floating mb-3">
+            <input
+            ngModel aggiunto
+            name="aggiunto"
+            type="text"
+            class="form-control"
+            id="aggiunto"
+            placeholder="you@example.com"
+            required=true
+            #aggiunto= ngModel>
+            <label>aggiunto</label>
+            <div
+            class="help-block"
+            *ngIf="!aggiunto.valid && aggiunto.touched"
+            >
+            <div *ngIf="aggiunto.errors?.['required']">
+              aggiunto obbligatorio
+            </div>
+          </div>
+          </div>
+            <div class="form-floating mb-3">
+              <input
+              ngModel slug
+              name="slug"
+              type="text"
+              class="form-control"
+              id="slug"
+              placeholder="you@example.com"
+              required=true
+              #slug= ngModel>
+              <label>Slug</label>
+              <div
+              class="help-block"
+              *ngIf="!slug.valid && slug.touched"
+              >
+              <div *ngIf="slug.errors?.['required']">
+                slug obbligatorio
+              </div>
+            </div>
+            </div>
+            <div class="form-floating mb-3">
+              <input
+              ngModel nome
+              name="nome"
+              type="text"
+              class="form-control"
+              id="nome"
+              placeholder="you@example.com"
+              required=true
+              #nome= ngModel>
+              <label>nome</label>
+              <div
+              class="help-block"
+              *ngIf="!nome.valid && nome.touched"
+              >
+              <div *ngIf="nome.errors?.['required']">
+                nome obbligatorio
+              </div>
+            </div>
+            </div>
+            <div class="form-floating mb-3">
+              <input
+              ngModel foto
+              name="foto"
+              type="text"
+              class="form-control"
+              id="foto"
+              placeholder="you@example.com"
+              required=true
+              #foto= ngModel>
+              <label>foto</label>
+              <div
+              class="help-block"
+              *ngIf="!foto.valid && foto.touched"
+              >
+              <div *ngIf="foto.errors?.['required']">
+                foto obbligatoria
+              </div>
+            </div>
+            </div>
+            <div class="form-floating mb-3">
+              <input
+              ngModel prezzo
+              name="prezzo"
+              type="text"
+              class="form-control"
+              id="prezzo"
+              placeholder="you@example.com"
+              required=true
+              #prezzo= ngModel>
+              <label>prezzo</label>
+              <div
+              class="help-block"
+              *ngIf="!prezzo.valid && prezzo.touched"
+              >
+              <div *ngIf="prezzo.errors?.['required']">
+                prezzo obbligatorio
+              </div>
+            </div>
+            </div>
+            <div class="form-floating mb-3">
+              <input
+              ngModel marca
+              name="marca"
+              type="text"
+              class="form-control"
+              id="marca"
+              placeholder="you@example.com"
+              required=true
+              #marca= ngModel>
+              <label>marca</label>
+              <div
+              class="help-block"
+              *ngIf="!marca.valid && marca.touched"
+              >
+              <div *ngIf="marca.errors?.['required']">
+                marca obbligatoria
+              </div>
+            </div>
+            </div>
+            <div class="form-floating mb-5">
+              <input
+              ngModel desc
+              name="desc"
+              type="text"
+              class="form-control"
+              id="desc"
+              placeholder="you@example.com"
+              required=true
+              #desc= ngModel>
+              <label>descrizione</label>
+              <div
+              class="help-block"
+              *ngIf="!desc.valid && desc.touched"
+              >
+              <div *ngIf="desc.errors?.['required']">
+                desc obbligatorio
+              </div>
+            </div>
+            </div>
+            <div class="form-floating mb-5">
+              <input
+              ngModel categoria
+              name="categoria"
+              type="text"
+              class="form-control"
+              id="categoria"
+              placeholder="you@example.com"
+              required=true
+              #categoria= ngModel>
+              <label>categoria</label>
+              <div
+              class="help-block"
+              *ngIf="!categoria.valid && categoria.touched"
+              >
+              <div *ngIf="categoria.errors?.['required']">
+                desc obbligatorio
+              </div>
+            </div>
+            </div>
+            <div class="form-floating mb-5">
+              <input
+              ngModel feat
+              name="feat"
+              type="text"
+              class="form-control"
+              id="feat"
+              placeholder="you@example.com"
+              required=true
+              #feat= ngModel>
+              <label>feat</label>
+              <div
+              class="help-block"
+              *ngIf="!feat.valid && feat.touched"
+              >
+              <div *ngIf="feat.errors?.['required']">
+                desc obbligatorio
+              </div>
+            </div>
+            </div>
+            <div class="form-floating mb-5">
+              <input
+              ngModel feat1
+              name="feat1"
+              type="text"
+              class="form-control"
+              id="feat1"
+              placeholder="you@example.com"
+              required=true
+              #feat1= ngModel>
+              <label>feat1</label>
+              <div
+              class="help-block"
+              *ngIf="!feat1.valid && feat1.touched"
+              >
+              <div *ngIf="feat1.errors?.['required']">
+                desc obbligatorio
+              </div>
+            </div>
+            </div>
+            <div class="form-floating mb-5">
+              <input
+              ngModel feat2
+              name="feat2"
+              type="text"
+              class="form-control"
+              id="feat2"
+              placeholder="you@example.com"
+              required=true
+              #feat2= ngModel>
+              <label>feat2</label>
+              <div
+              class="help-block"
+              *ngIf="!feat2.valid && feat2.touched"
+              >
+              <div *ngIf="feat2.errors?.['required']">
+                desc obbligatorio
+              </div>
+            </div>
+            </div>
+            <button (click)="onSubmit(f)" class="w-100 mb-2 btn btn-lg rounded-3 btn-secondary">Aggiungi</button>
+          </form>
+          <button (click)="onLogout()" class="w-100 mb-2 btn btn-lg rounded-3 btn-secondary" type="submit">Log-out</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
