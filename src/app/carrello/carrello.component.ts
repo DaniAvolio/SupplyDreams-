@@ -33,6 +33,15 @@ export class CarrelloComponent implements OnInit {
 onTornaAProdotti(){
   this.router.navigate(["/prodotti"])
 }
+// calcolaquantita():number{
+//   var q=0
+//   var prod:Prodotto
+//   for(var i= 0;i<this.prodserv.carrello.length; i++){
+//     q=q+this.prodserv.carrello[i].quantita
+//     console.log("sososo",q);
+//   }
+//   return q
+// }
 
 
 }
