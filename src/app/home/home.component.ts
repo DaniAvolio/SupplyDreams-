@@ -12,14 +12,14 @@ export class HomeComponent implements OnInit {
   constructor(private router: Router, private prodserv:ProdottoService) { }
 
   ngOnInit(): void {
-    //post for insert data in db
+    // post for insert data in db
     // this.prodserv.insertProdotti(this.prodserv.url,
-    // {quantita: 0, aggiunto:false, slug:"prod13", nome:"x2 biscotti proteici",
-    //   foto:".//src/assets/images/biscottoprozis.jpg",
-    //   prezzo:3.99, marca:"Prozis", desc:"biscotti proteici della Prozis al gusto biscotto e crema. Ottimi come sostituto di pasto o come spuntino quando sei fuori casa", categoria:"biscotti", feat:"gustosi",feat1:"30% proteine",feat2:"take away"}
+    // {quantita: 0, aggiunto:false, slug:"prod16", nome:"Caramelle gommose multivitaminiche",
+    //   foto:".//src/assets/images/caramellevitamineprozis.jpg",
+    //   prezzo:2.99, marca:"Prozis", desc:"Caramelle gommose al gusto di mirtillo arricchite con multivitaminici, per aiutare la persona durante tutta la giornata a rimanere forte e in salute!", categoria:"vitamine", feat:"caramelle",feat1:"fruttate",feat2:"con multivitaminico"}
     // ).subscribe(data =>{
     //   console.log(data);
-    // })s
+    // })
   }
 
   onVaiAProdotti() {
