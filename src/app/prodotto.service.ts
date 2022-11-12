@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 export class ProdottoService {
   public url= 'https://progettoangular-9c931-default-rtdb.europe-west1.firebasedatabase.app/prodotti.json'
 
-  private _prodotti : Prodotto[] = [
+  public prodotti : Prodotto[] = [
     // {quantita: 0, aggiunto:false, slug:"prod1", nome:"proteine whey concentrate",
     //  foto:".//src/assets/images/ProtieneProzis1.jpg",
     //   prezzo:29.99, marca:"Prozis", desc:"proteine del siero del latte concentrate della prozis. Ideali prima o dopo il workout", categoria:"proteine", feat:"concentrate",feat1:"alta solubilità",feat2:"economiche"},
@@ -53,7 +53,12 @@ export class ProdottoService {
 
   public emitter = new Subject<Prodotto[]>()
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    this.getProdotti(this.url)
+    .subscribe((data: any) =>{
+      this.prodotti = Object.keys(data).map((key) => {return data[key]})
+    })
+   }
 
   aggiungiACarrello(prod:Prodotto, q:number){
     prod.quantita= q
@@ -67,16 +72,16 @@ export class ProdottoService {
     this._carrello = this._carrello.filter(p => p !== prod)
   }
   cercaProdotto(slug: string) {
-    return this._prodotti.find(p => p.slug === slug)
+    return this.prodotti.find(p => p.slug === slug)
   }
 
   change(prod:Prodotto){
     prod.aggiunto=true
   }
 
-  get prodotti() {
-    return [...this._prodotti]
-  }
+  // get prodotti() {
+  //   return [...this.prodotti]
+  // }
 
   get carrello() {
     return [...this._carrello]

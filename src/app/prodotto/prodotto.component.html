@@ -8,7 +8,7 @@
       </div>
       <!-- <button [routerLink]="['/prodotti']" style="border: 1px solid black" class="btn btn-secondary">Torna ai Prodotti</button> -->
       <button *ngIf="prodotto?.aggiunto==false"  [routerLink]="['/carrello']" style="border: 1px solid black" class="btn btn-outline-secondary" (click)="AggiungiACarrello()">Acquista Ora</button>
-      <button *ngIf="prodotto?.aggiunto==true"  [routerLink]="['/carrello']" style="border: 1px solid black" class="btn btn-secondary">Prodotto già nel carrello</button>
+      <button *ngIf="prodotto?.aggiunto==true"  [routerLink]="['/carrello']" style="border: 1px solid black" class="btn btn-secondary">Prodotto aggiunto</button>
 
     </div>
   </div>

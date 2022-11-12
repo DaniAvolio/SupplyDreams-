@@ -16,14 +16,15 @@ export class ProdottiComponent implements OnInit {
 
 
   constructor(private prodserv:ProdottoService) {
+
     this.carrello = prodserv.carrello
+
    }
 
   ngOnInit(): void {
     this.prodserv.getProdotti(this.prodserv.url)
     .subscribe((data: any) =>{
       this.prodotti = Object.keys(data).map((key) => {return data[key]})
-      console.log(this.prodotti)
     })
   }
   AggiungiACarrello(prod:Prodotto){

@@ -16,18 +16,18 @@ export class ProdottoComponent implements OnInit {
   subscription?:Subscription
 
   constructor(private route: ActivatedRoute, private prodottoService:ProdottoService, private router :Router) {
-    const { slug } = route?.snapshot?.params ?? {}
-    //const slug = route.snapshot.params["slug"]
-    this.prodotto = prodottoService.cercaProdotto(slug)
-
-    this.subscription = route.params.subscribe(params => {
-      console.log("Parametri subscribe: ", params);
-      const { slug } = params
-      this.prodotto = prodottoService.cercaProdotto(slug)
-    })
   }
 
   ngOnInit(): void {
+
+    const { slug } = this.route?.snapshot?.params ?? {}
+    //const slug = route.snapshot.params["slug"]
+    this.prodotto = this.prodottoService.cercaProdotto(slug)
+
+    this.subscription = this.route.params.subscribe(params => {
+      const { slug } = params
+      this.prodotto = this.prodottoService.cercaProdotto(slug)
+    })
   }
   AggiungiACarrello(){
     this.prodottoService.aggiungiACarrello(<Prodotto>this.prodotto, 1)
