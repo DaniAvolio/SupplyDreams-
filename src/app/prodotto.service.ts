@@ -88,7 +88,7 @@ export class ProdottoService {
   }
 
 
-
+//db QUERY
 
   insertProdotti(url:string, data: {}){
     return this.http.post(url, data)
@@ -99,3 +99,4 @@ export class ProdottoService {
     return this.http.get(url)
   }
 }
+
