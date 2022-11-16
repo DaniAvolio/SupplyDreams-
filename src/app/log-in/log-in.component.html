@@ -8,7 +8,7 @@
       <div class="modal-body p-5 pt-0">
         <form
         #f="ngForm"
-        (ngSubmit)="onSubmit(f)"
+        (ngSubmit)="onLogin(f)"
         class="needs-validation"
         novalidate="">
           <div class="form-floating mb-3">
@@ -61,7 +61,7 @@
             </div>
           </div>
           </div>
-          <button [routerLink]="['/account']" [disabled]="!f.valid" (click)="onLogin()" class="w-100 mb-2 btn btn-lg rounded-3 btn-secondary" type="submit">Log-In</button>
+          <button [disabled]="!f.valid" (click)="onLogin(f)" class="w-100 mb-2 btn btn-lg rounded-3 btn-secondary" type="submit">Log-In</button>
           <div>
             <button class="btn">Non hai un account? registrati! </button>
           </div>

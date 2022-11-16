@@ -64,7 +64,6 @@ export class ProdottoService {
     prod.quantita= q
     this._carrello.push(prod)
     this.totale = this.totale + (<number>prod.prezzo*prod.quantita)
-
   }
   togliDaCarrello(prod:Prodotto) {
     this.totale = this.totale - (<number>prod.prezzo*prod.quantita)
