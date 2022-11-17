@@ -15,7 +15,8 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { RegardsComponent } from './regards/regards.component';
 import { HeaderComponent } from './header/header.component';
 import { HttpClientModule} from '@angular/common/http';
-import { AccountComponent } from './account/account.component'
+import { AccountComponent } from './account/account.component';
+import { SignupComponent } from './signup/signup.component'
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { AccountComponent } from './account/account.component'
     CheckoutComponent,
     RegardsComponent,
     HeaderComponent,
-    AccountComponent
+    AccountComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

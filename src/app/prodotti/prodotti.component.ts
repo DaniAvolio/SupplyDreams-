@@ -30,7 +30,7 @@ export class ProdottiComponent implements OnInit {
     var q= this.quantitaselezionata
     prod.aggiunto=true
     this.prodserv.aggiungiACarrello(prod, q)
-    this.carrello= this.prodserv._carrello
+    this.carrello= this.prodserv.carrello
     alert("x"+prod.quantita + " " + prod.nome + " aggiunto al carrello")
   }
   RimuovidaCarrello(prod:Prodotto){

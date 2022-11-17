@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { ProdottoService } from '../prodotto.service';
 
@@ -10,19 +11,22 @@ import { ProdottoService } from '../prodotto.service';
 })
 export class AccountComponent implements OnInit {
   islog : boolean
-  constructor(private as: AuthService, private prodserv:ProdottoService) {
+  utenteattivo:any
+  constructor(private as: AuthService, private prodserv:ProdottoService, private route:Router) {
     this.islog = as.LoggedIn
+    this.utenteattivo=as.utenteattivo
   }
 
   ngOnInit(): void {
   }
 
   onSubmit(ngform: NgForm){
-    
+
   }
   onLogout(){
     this.as.logout()
     this.islog = this.as.LoggedIn
+    this.route.navigate(["/log-in"])
   }
 
 }

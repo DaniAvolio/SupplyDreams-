@@ -10,28 +10,41 @@ import { UtenteService } from '../utente.service';
   styleUrls: ['./log-in.component.css']
 })
 export class LogInComponent implements OnInit {
-
+  bool:boolean = true
   islog : boolean
+  utenteattivo:any
   constructor(private as: AuthService, private router:Router, private utserv:UtenteService) {
     this.islog = as.LoggedIn
+    console.log("islog e" +this.islog);
+
    }
 
   ngOnInit(): void {
   }
-  onSubmit(ngform: NgForm) {
-    console.log(ngform);
-  }
+
   onLogin(ngform: NgForm){
     var utente = ngform.value
-    console.log("utente in arrivo dal form: "+utente);
     for(var i=0; i<this.utserv.utenti.length;i++){
       if(utente.email==this.utserv.utenti[i].email && utente.password==this.utserv.utenti[i].password)
       {
         this.as.login(utente)
         this.islog = this.as.LoggedIn
-        this.router.navigate(["/carrello"])
+        this.router.navigate(["/account"])
+        this.utenteattivo = this.as.utenteattivo
+      }
+      else if(utente.email==this.utserv.utenti[i].email && utente.password!=this.utserv.utenti[i].password){
+        alert("La password inseria è errata" +i);
+        this.bool= false
       }
     }
+    if(this.utenteattivo==undefined){
+      alert("Utente non esiste")
+    }
+  }
+  onLogout(){
+    this.as.logout()
+    this.islog = this.as.LoggedIn
+
   }
 
 }

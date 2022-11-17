@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProdottoService } from '../prodotto.service';
 import { Prodotto } from '../dati/prodotto.data';
-
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -9,16 +8,14 @@ import { Prodotto } from '../dati/prodotto.data';
 })
 export class HeaderComponent implements OnInit {
   carrello:Prodotto[] = []
-
   constructor(private prodserv: ProdottoService) {
-
    }
 
   ngOnInit(): void {
   }
 
   lunghezzacarrello():number{
-    this.carrello=this.prodserv._carrello
+    this.carrello=this.prodserv.carrello
     return this.carrello.length
 
   }

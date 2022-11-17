@@ -47,7 +47,7 @@ export class ProdottoService {
     //     prezzo:14.99, marca: "Prozis", desc:"barrette proteiche Prozis, gustose e croccanti. con il 60% di proteine queste barrette sono ideali per chi ha un fabbisogno proteico elevata. con 1 ingerisci ben 20 grammi di proteine d ialta qualità!", categoria:"barrette", feat:"con creatina",feat1:"60% proteine",feat2:"alta qualità"}
   ]
 
-  public _carrello: Prodotto[] = []
+  public carrello: Prodotto[] = []
 
   public totale: number = 0
 
@@ -62,13 +62,13 @@ export class ProdottoService {
 
   aggiungiACarrello(prod:Prodotto, q:number){
     prod.quantita= q
-    this._carrello.push(prod)
+    this.carrello.push(prod)
     this.totale = this.totale + (<number>prod.prezzo*prod.quantita)
   }
   togliDaCarrello(prod:Prodotto) {
     this.totale = this.totale - (<number>prod.prezzo*prod.quantita)
     prod.quantita=0
-    this._carrello = this._carrello.filter(p => p !== prod)
+    this.carrello = this.carrello.filter(p => p !== prod)
   }
   cercaProdotto(slug: string) {
     return this.prodotti.find(p => p.slug === slug)
@@ -82,9 +82,6 @@ export class ProdottoService {
   //   return [...this.prodotti]
   // }
 
-  get carrello() {
-    return [...this._carrello]
-  }
 
 
 //db QUERY

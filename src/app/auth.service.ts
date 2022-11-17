@@ -1,3 +1,4 @@
+import { getLocaleFirstDayOfWeek } from '@angular/common';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Utente } from './dati/utente.data';
@@ -22,7 +23,6 @@ export class AuthService {
   login(utente:Utente){
     this.utenteattivo=utente
     console.log("Utente In sessione : "+this.utenteattivo.email);
-
     this.LoggedIn=true
     this.router.navigate(['/log-in'])
   }
