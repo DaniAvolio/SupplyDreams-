@@ -1,1 +1,74 @@
-<p>signup works!</p>
+<div class="modal modal-signin position-static d-block bg-white py-2" tabindex="-1" role="dialog" id="modalSignin">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content rounded-4 shadow">
+      <div class="modal-header p-5 pb-4 border-bottom-0">
+        <!-- <h1 class="modal-title fs-5" >Modal title</h1> -->
+        <h1 class="fw-bold mb-0 fs-2"  style="margin: auto">Sign-Up</h1>
+      </div>
+      <div class="modal-body p-5 pt-0">
+        <form
+        #f="ngForm"
+        (ngSubmit)="onSignup(f)"
+        class="needs-validation"
+        novalidate="">
+          <div class="form-floating mb-3">
+            <input
+            ngModel email="@"
+            name="email"
+            type="email"
+            class="form-control"
+            id="email"
+            placeholder="you@example.com"
+            required=true
+            contain="@"
+            #email= ngModel>
+
+            <label>Email address</label>
+            <div
+            class="help-block"
+            *ngIf="!email.valid && email.touched"
+            >
+            <div *ngIf="email.errors?.['required']">
+              Email obbligatoria
+            </div>
+            <div *ngIf="email.errors?.['email']">
+              Email deve contenere una @
+            </div>
+          </div>
+          </div>
+          <div class="form-floating mb-3">
+            <input
+            ngModel
+            name="password"
+            type="password"
+            class="form-control"
+            id="password"
+            placeholder="password"
+            required=true
+            minlength="6"
+
+            #password= ngModel>
+            <label for="floatingPassword">Password</label>
+            <div
+            class="help-block"
+            *ngIf="!password.valid && password.touched"
+            >
+            <div *ngIf="password.errors?.['required']">
+              Password obbligatoria
+            </div>
+            <div *ngIf="password.errors?.['minlength']">
+              la Password deve essere lunga almeno 6 caratteri
+            </div>
+          </div>
+          </div>
+          <button [disabled]="!f.valid" (click)="onSignup(f)" class="w-100 mb-2 btn btn-lg rounded-3 btn-secondary" type="submit">Registrati</button>
+          <div>
+            <button [routerLink]="['/log-in']" class="btn "><span class="text-decoration-underline" style="color: blue ;">Hai gia un account? Accedi</span></button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+

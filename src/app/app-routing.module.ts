@@ -11,12 +11,14 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { RegardsComponent } from './regards/regards.component';
 import { AuthGuardService } from './auth-guard.service';
 import { AccountComponent } from './account/account.component';
+import { SignupComponent } from './signup/signup.component';
 
 const routes: Routes = [
 {path: '' , component: HomeComponent},
 {path: 'prodotti',component: ProdottiComponent},
 {path: 'carrello',component: CarrelloComponent, canActivate:[AuthGuardService]},
 {path: 'log-in',component: LogInComponent},
+{path: 'signup',component: SignupComponent},
 {path: 'account', component: AccountComponent, canActivate:[AuthGuardService]},
 {path:"prodotti/:slug", component: ProdottoComponent},
 {path:"carrello/checkout", component: CheckoutComponent},

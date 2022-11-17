@@ -9,6 +9,8 @@ import { Utente } from './dati/utente.data';
 export class AuthService {
 
   utenteattivo ?:Utente
+  c?: number
+  nomeutente?: string
   LoggedIn = false;
 
   constructor(private router:Router) { }
@@ -22,6 +24,8 @@ export class AuthService {
   }
   login(utente:Utente){
     this.utenteattivo=utente
+    this.c= this.utenteattivo.email.indexOf('@')
+    this.nomeutente= this.utenteattivo?.email.substring(0, this.c)
     console.log("Utente In sessione : "+this.utenteattivo.email);
     this.LoggedIn=true
     this.router.navigate(['/log-in'])
