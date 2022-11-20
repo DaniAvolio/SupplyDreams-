@@ -1,9 +1,9 @@
 <div class="modal modal-signin position-static d-block bg-white py-2" tabindex="-1" role="dialog" id="modalSignin">
   <div class="modal-dialog" role="document">
-    <div class="modal-content rounded-4 shadow">
+    <div style="animation: fadeInRight; animation-duration: 1s; " class="modal-content rounded-4 shadow">
       <div class="modal-header p-5 pb-4 border-bottom-0">
         <!-- <h1 class="modal-title fs-5" >Modal title</h1> -->
-        <h1 class="fw-bold mb-0 fs-2"  style="margin: auto">Sign-Up</h1>
+        <h1 class="fw-bold mb-0 fs-2"  style="margin: auto">Sign-up</h1>
       </div>
       <div class="modal-body p-5 pt-0">
         <form
@@ -61,6 +61,7 @@
             </div>
           </div>
           </div>
+          <div class="alert alert-success text-center" *ngIf='registrato'>{{registratomessage}}</div>
           <button [disabled]="!f.valid" (click)="onSignup(f)" class="w-100 mb-2 btn btn-lg rounded-3 btn-secondary" type="submit">Registrati</button>
           <div>
             <button [routerLink]="['/log-in']" class="btn "><span class="text-decoration-underline" style="color: blue ;">Hai gia un account? Accedi</span></button>

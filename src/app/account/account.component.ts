@@ -28,6 +28,8 @@ export class AccountComponent implements OnInit {
 
   }
   onLogout(){
+    
+    this.prodserv.carrello = []
     this.as.logout()
     this.islog = this.as.LoggedIn
     this.route.navigate(["/log-in"])

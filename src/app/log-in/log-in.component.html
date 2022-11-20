@@ -1,9 +1,9 @@
 <div *ngIf="islog==false" class="modal modal-signin position-static d-block bg-white py-2" tabindex="-1" role="dialog" id="modalSignin">
   <div class="modal-dialog" role="document">
-    <div class="modal-content rounded-4 shadow">
+    <div style="animation: fadeInLeft; animation-duration: 2s;" class="modal-content rounded-4 shadow">
       <div class="modal-header p-5 pb-4 border-bottom-0">
         <!-- <h1 class="modal-title fs-5" >Modal title</h1> -->
-        <h1 class="fw-bold mb-0 fs-2" style="margin: auto">Log-In</h1>
+        <h1 class="fw-bold mb-0 fs-2" style="margin: auto">Log-in</h1>
       </div>
       <div class="modal-body p-5 pt-0">
         <form
@@ -34,6 +34,7 @@
             <div *ngIf="email.errors?.['email']">
               Email deve contenere una @
             </div>
+
           </div>
           </div>
           <div class="form-floating mb-3">
@@ -61,6 +62,7 @@
             </div>
           </div>
           </div>
+          <div class="alert alert-danger text-center" *ngIf='invalidLogin'>{{errorMessage}}</div>
           <button [disabled]="!f.valid" (click)="onLogin(f)" class="w-100 mb-2 btn btn-lg rounded-3 btn-secondary" type="submit">Log-In</button>
           <div>
             <button [routerLink]="['/signup']"  class="btn"><span class="text-decoration-underline" style="color: blue;">Non hai un account? registrati</span> </button>

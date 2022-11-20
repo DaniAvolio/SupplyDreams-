@@ -8,7 +8,7 @@
 
 <div class="card-group justify-content-center bg-light phone">
 <div *ngFor="let prod of prodotti | filtraArray:ricerca:'categoria'" class="card-group justify-content-center">
-<div class="card design carddesign">
+<div style="animation: fadeIn; animation-duration: 1s; " class="card design carddesign">
   <button class="btn" style="padding:none; margin:none; border: none;"><img [routerLink]="['/prodotti', prod.slug]" src="{{prod.foto}}" class="card-img-top" alt="..." width="250">
   </button>
     <div class="card-body">

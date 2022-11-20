@@ -11,7 +11,7 @@ export class FiltraArrayPipe implements PipeTransform {
     {
       return array
     }
-    return array.filter( v => v[chiave] === valore)
+    return array.filter( v => v[chiave].includes(valore))
   }
 
 }

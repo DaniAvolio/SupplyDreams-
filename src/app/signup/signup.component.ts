@@ -12,6 +12,8 @@ import { Router } from '@angular/router';
 })
 export class SignupComponent implements OnInit {
 
+  registratomessage = ""
+  registrato = false
   constructor(private utserv:UtenteService, private route: Router) { }
 
   ngOnInit(): void {
@@ -24,8 +26,7 @@ export class SignupComponent implements OnInit {
       ).subscribe(data=>{
         console.log(data);
       })
-      alert("ti sei registrato con successo")
-      this.route.navigate(["/log-in"])
+      this.registrato = true
+      this.registratomessage = "Succesfull Signup"
   }
-
 }
