@@ -21,12 +21,19 @@ export class SignupComponent implements OnInit {
 
   onSignup(ngform:NgForm){
     var utente = ngform.value
-    this.utserv.insertUtenti(this.utserv.url,
+    for(var i=0; i<this.utserv.utenti.length;i++){
+      if(utente.email==this.utserv.utenti[i].email)
+      {
+        this.registrato = true
+        this.registratomessage = "User already exist"
+    }
+  }
+     if(this.registrato==false)
+     {
+     this.utserv.insertUtenti(this.utserv.url,
       {email: utente.email  , password: utente.password }
       ).subscribe(data=>{
         console.log(data);
       })
-      this.registrato = true
-      this.registratomessage = "Succesfull Signup"
-  }
+    }}
 }

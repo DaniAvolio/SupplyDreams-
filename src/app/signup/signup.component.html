@@ -61,7 +61,7 @@
             </div>
           </div>
           </div>
-          <div class="alert alert-success text-center" *ngIf='registrato'>{{registratomessage}}</div>
+          <div class="alert alert-warning text-center" *ngIf='registrato'>{{registratomessage}}</div>
           <button [disabled]="!f.valid" (click)="onSignup(f)" class="w-100 mb-2 btn btn-lg rounded-3 btn-secondary" type="submit">Registrati</button>
           <div>
             <button [routerLink]="['/log-in']" class="btn "><span class="text-decoration-underline" style="color: blue ;">Hai gia un account? Accedi</span></button>
