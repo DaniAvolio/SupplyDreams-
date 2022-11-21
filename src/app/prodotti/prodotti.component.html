@@ -8,27 +8,13 @@
 
 <div class="card-group justify-content-center bg-light phone">
 <div *ngFor="let prod of prodotti | filtraArray:ricerca:'categoria'" class="card-group justify-content-center">
-<div style="animation: fadeIn; animation-duration: 1s; " class="card design carddesign">
+ <div style="animation: fadeIn; animation-duration: 1s; " class="card design carddesign">
   <button class="btn" style="padding:none; margin:none; border: none;"><img [routerLink]="['/prodotti', prod.slug]" src="{{prod.foto}}" class="card-img-top" alt="..." width="250">
   </button>
     <div class="card-body">
-    <p [routerLink]="['/prodotti', prod.slug]" class="text-center" ><strong>{{prod.nome}}</strong></p>
-    <p class="text-start">prodotto della {{prod.marca}}</p>
-    <div class="d-flex justify-content-between align-items-center">
-      <div class="btn-group">
-        <p class="card-text"> <strong>€{{prod.prezzo}}</strong></p>
-      </div>
-      <select *ngIf="prod.quantita==0"  [(ngModel)]="quantitaselezionata" style="border-radius: 0.5vh">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-      </select>
-      <button *ngIf="prod.aggiunto==false"  (click)="AggiungiACarrello(prod)" style="border: 1px solid black" class="text-black btn btn-light">Acquista</button>
-      <button *ngIf="prod.aggiunto==true" (click)="RimuovidaCarrello(prod)" style="border: 1px solid black" class="text-white btn btn-secondary">Rimuovi</button>
+      <p [routerLink]="['/prodotti', prod.slug]" class="text-center" ><strong>{{prod.nome}} </strong><br> {{prod.marca}}</p>
+      <p class="card-text text-center" style="font-size: 1.2rem;" > <strong>€{{prod.prezzo}}</strong></p>
     </div>
-  </div>
 </div>
 </div>
 </div>

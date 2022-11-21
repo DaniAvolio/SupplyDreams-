@@ -11,7 +11,7 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./prodotto.component.css']
 })
 export class ProdottoComponent implements OnInit {
-
+  quantitaselezionata : number = 1
   prodotto?:Prodotto
   subscription?:Subscription
 
@@ -29,8 +29,9 @@ export class ProdottoComponent implements OnInit {
   ngOnInit(): void {
   }
   AggiungiACarrello(){
-    this.prodottoService.aggiungiACarrello(<Prodotto>this.prodotto, 1)
+    var q= this.quantitaselezionata
+    this.prodottoService.aggiungiACarrello(<Prodotto>this.prodotto, q)
     this.prodottoService.change(<Prodotto>this.prodotto)
   }
-
+  
 }

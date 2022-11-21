@@ -9,7 +9,6 @@ import { ProdottoService, } from '../prodotto.service';
   styleUrls: ['./prodotti.component.css']
 })
 export class ProdottiComponent implements OnInit {
-  quantitaselezionata: number = 1
   prodotti: Prodotto[] = []
   ricerca= ""
   carrello: Prodotto[] = []
@@ -26,17 +25,4 @@ export class ProdottiComponent implements OnInit {
     //   this.prodotti = Object.keys(data).map((key) => {return data[key]})
     // })
   }
-  AggiungiACarrello(prod:Prodotto){
-    var q= this.quantitaselezionata
-    prod.aggiunto=true
-    this.prodserv.aggiungiACarrello(prod, q)
-    this.carrello= this.prodserv.carrello
-    alert("x"+prod.quantita + " " + prod.nome + " aggiunto al carrello")
-  }
-  RimuovidaCarrello(prod:Prodotto){
-    prod.aggiunto=false
-    this.prodserv.togliDaCarrello(prod)
-  }
-
-
 }

@@ -3,13 +3,21 @@
     <h1 class="display-6 fw-bold lh-1">{{prodotto?.nome}} <h3 class="display-10">{{prodotto?.marca}}</h3></h1>
     <p class="lead">{{prodotto?.desc}}</p>
     <div class="d-flex justify-content-between align-items-center">
-      <div class="btn-group">
         <h3 class="card-text"> <strong>€{{prodotto?.prezzo}}</strong></h3>
-      </div>
       <!-- <button [routerLink]="['/prodotti']" style="border: 1px solid black" class="btn btn-secondary">Torna ai Prodotti</button> -->
+      <div class="d-flex justify-content-between">
+      <select *ngIf="prodotto?.quantita==0"  [(ngModel)]="quantitaselezionata" style="border-radius: 0.5vh">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+      <div style="margin-left: 10px;">
       <button *ngIf="prodotto?.aggiunto==false"  [routerLink]="['/carrello']" style="border: 1px solid black" class="btn btn-outline-secondary" (click)="AggiungiACarrello()">Acquista Ora</button>
-      <button *ngIf="prodotto?.aggiunto==true"  [routerLink]="['/carrello']" style="border: 1px solid black" class="btn btn-secondary">Prodotto nel carrello</button>
-
+      <button *ngIf="prodotto?.aggiunto==true"  [routerLink]="['/carrello']" style="border: 1px solid black" class="btn btn-secondary">{{prodotto?.quantita}} Prodotti nel carrello</button>
+    </div>
+    </div>
     </div>
   </div>
   <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden ">
